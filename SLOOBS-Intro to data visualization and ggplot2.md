@@ -61,6 +61,8 @@ p + geom_point(size = 2) + labs(x="Miles per gallon",y="Horsepower",title="Relat
 ```
 The color of the points represents the number of cylender in car. factor() makes the data discrete. 
 
+![](figs/gg2.png)
+
 ```r
 p <- ggplot(mtcars, aes(x=mpg, y=hp)) + 
   geom_point(size = 2,aes(col=factor(cyl))) +
@@ -88,7 +90,15 @@ p + geom_boxplot(aes(col=factor(cyl))) + geom_jitter(aes(col=factor(cyl)))
 
 ![](figs/gg4.png)
 
+**Violin Plot:**
+```r
+p <- ggplot(mtcars, aes(x=factor(cyl), y=mpg,col=cyl))
+p + geom_violin(aes(col=factor(cyl))) + geom_jitter(aes(col=factor(cyl)))
+```
+![](figs/gg5.png)
 
+#### Note:
+**ggplot cheatsheet:** [https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
 This is a class note from **Aaron Quinlan's** [Salt Lake Learners of Biostatistics](https://github.com/quinlan-lab/sllobs-biostats) course created by mmk. See acknowledgement in README.md
 
