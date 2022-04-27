@@ -48,8 +48,45 @@ geom_smooth(method="lm") adds a linear regression line. (lm=linear model)
 **More Aesthetics**
 ```r
 p <- ggplot(mtcars, aes(x=mpg, y=hp))
-p + geom_point(col="blue") + geom_smooth(method="lm", col="black", fill="red", alpha=0.25)
+p + geom_point(col="blue") + geom_smooth(method="lm", col="black", fill="red", alpha=0.25) +
+labs(x="Miles per gallon",y="Horsepower",title="Relationship between MPG and HP")
 ```
+![](figs/gg1.png)
+
+#### More with ggplot
+
+```r
+p <- ggplot(mtcars, aes(x=mpg, y=hp, col=factor(cyl))) 
+p + geom_point(size = 2) + labs(x="Miles per gallon",y="Horsepower",title="Relationship between MPG and HP")
+```
+The color of the points represents the number of cylender in car. factor() makes the data discrete. 
+
+```r
+p <- ggplot(mtcars, aes(x=mpg, y=hp)) + 
+  geom_point(size = 2,aes(col=factor(cyl))) +
+  geom_smooth(method="lm")
+
+p
+```
+Adding a linear regression line and also coloring the points. 
+
+![](figs/gg3.png)
+
+
+#### Boxplot
+
+```r
+p <- ggplot(mtcars, aes(x=factor(cyl), y=mpg,col=cyl))
+p + geom_boxplot(aes(col=factor(cyl))) 
+```
+
+**Adding Jitter:**
+```r
+cyl), y=mpg,col=cyl))
+p + geom_boxplot(aes(col=factor(cyl))) + geom_jitter(aes(col=factor(cyl)))
+```
+
+![](figs/gg4.png)
 
 
 
