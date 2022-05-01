@@ -30,7 +30,7 @@ ggplot(chunks,aes(x=num_chunks)) + geom_bar()
 
 #install.packages("vcd")   vcd = visualize categorical data
 library("vcd")
-gf <- goodfit(chunks$num_chunks, "nbinomial")
+gf <- goodfit(chunks$num_chunks, "poisson")
 rootogram(gf)
 
 
@@ -38,7 +38,7 @@ rootogram(gf)
 
 # see if a randomly generated poisson data fits in goodfit
 pd <- rpois(n = 1000, lambda= 3)
-gf <- goodfit(pd, "nbinomial")
+gf <- goodfit(pd, "poisson")
 rootogram(gf)
 
 

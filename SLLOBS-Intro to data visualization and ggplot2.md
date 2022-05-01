@@ -100,5 +100,8 @@ p + geom_violin(aes(col=factor(cyl))) + geom_jitter(aes(col=factor(cyl)))
 #### Note:
 **ggplot cheatsheet:** [https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 
+
+---
+
 This is a class note from **Aaron Quinlan's** [Salt Lake Learners of Biostatistics](https://github.com/quinlan-lab/sllobs-biostats) course created by mmk. See acknowledgement in README.md
 
